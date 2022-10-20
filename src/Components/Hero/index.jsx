@@ -7,8 +7,15 @@ import StatsBar from '../StatBar';
 
 const Hero = () => {
   return (
-    <section className="min-h-[1074px] relative w-screen">
-      <img src={HeroImage} alt="Hero" className="h-full w-full object-cover" />
+    <section className="relative w-screen">
+      <div className="max-h-[1074px] w-full">
+        <img
+          src={HeroImage}
+          alt="Hero"
+          className="h-full w-full object-contain"
+        />
+      </div>
+
       <div className=" h-[1074px] top-0 absolute w-full linear-gradient" />
       <Container>
         <div className="absolute top-[40%] -translate-y-[50%]  flex flex-col gap-10 justify-center">

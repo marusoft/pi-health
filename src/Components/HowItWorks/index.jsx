@@ -8,7 +8,7 @@ const HowItWorks = () => {
   return (
     <section className="w-screen h-max">
       <Container>
-        <div>
+        <>
           <TitleWithBg>How it Works</TitleWithBg>
           <div className="my-16 flex w-[90%] mx-auto flex-col flex-wrap gap-40">
             {constants.map((constant, index) => {
@@ -21,7 +21,7 @@ const HowItWorks = () => {
               );
             })}
           </div>
-        </div>
+        </>
       </Container>
     </section>
   );

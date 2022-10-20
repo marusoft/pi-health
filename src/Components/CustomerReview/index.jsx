@@ -59,7 +59,7 @@ const ReviewInfo = () => {
 
 const CustomerReview = () => {
   return (
-    <section className="w-full py-16">
+    <section className="w-full">
       <Container>
         <div className="flex w-full items-center flex-wrap justify-between">
           <ReviewContainer />

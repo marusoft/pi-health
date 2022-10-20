@@ -1,10 +1,13 @@
 import React from 'react';
-import CustomerReview from '../../Components/CustomerReview';
-import Hero from '../../Components/Hero';
-import HowItWorks from '../../Components/HowItWorks';
-import OurProducts from '../../Components/OurProdiucts';
-import Subscribe from '../../Components/Subscribe';
-import Layout from '../../Layout';
+import {
+  CustomerReview,
+  Hero,
+  HowItWorks,
+  OurProducts,
+  Subscribe,
+  Layout,
+} from '../../Components';
+
 import windowResizerListener from '../../Utils/helper';
 
 const Home = () => {
@@ -12,7 +15,7 @@ const Home = () => {
 
   return (
     <section>
-      {windowWidth < 1200 ? (
+      {windowWidth < 1020 ? (
         <div className="text-[40px] text-center font-[600] flex w-full h-screen items-center justify-center">
           Website Not Optimised for Mobile view at the moment
         </div>
@@ -20,11 +23,18 @@ const Home = () => {
         <>
           <Layout>
             <Hero />
-            {windowWidth > 1289 && <div className="w-full h-[200px]" />}
+            <div className="w-full lg:h-[200px] h-[100px]" />
+            {windowWidth > 1289 && (
+              <div className="w-full lg:h-[100px] h-[100px]" />
+            )}
             <HowItWorks />
+            <div className="w-full lg:h-[200px] h-[100px]" />
             <OurProducts />
+            <div className="w-full lg:h-[200px] h-[100px]" />
             <CustomerReview />
+            <div className="w-full lg:h-[200px] h-[100px]" />
             <Subscribe />
+            <div className="w-full lg:h-[200px] h-[100px]" />
           </Layout>
         </>
       )}

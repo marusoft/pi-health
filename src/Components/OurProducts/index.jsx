@@ -42,7 +42,7 @@ const OurProducts = () => {
   };
 
   return (
-    <section className="w-screen mt-32 h-max">
+    <section className="w-screen h-max">
       <Container>
         <div>
           <TitleWithBg>Our Products</TitleWithBg>

@@ -33,9 +33,9 @@ const StatsBar = () => {
     <div
       className={`flex h-max flex-wrap justify-center border ${
         windowWidth > 1289
-          ? 'absolute -translate-x-[50%] left-[50%] -translate-y-[-50%]'
-          : 'relative mb-8'
-      } items-center bottom-0  z-10 lg:w-[1291px] md:max-w-full mx-auto rounded-[20px] gap-4 px-12 py-8 box-border bg-white [box-shadow:_0px_4px_4px_4px_rgba(193,_183,_183,_0.13)]`}
+          ? 'absolute -translate-x-[50%]  bottom-0  left-[50%] -translate-y-[-50%]'
+          : 'mb-8'
+      } items-center z-10 lg:w-[1291px] md:max-w-full mx-auto rounded-[20px] gap-4 px-12 py-8 box-border bg-white [box-shadow:_0px_4px_4px_4px_rgba(193,_183,_183,_0.13)]`}
     >
       {content.map((item) => (
         <StatsBarContent
