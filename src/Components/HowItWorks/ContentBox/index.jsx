@@ -4,39 +4,39 @@ const ContentBox = ({ constant, index }) => {
   let flexRow;
   const evaluateStyling = () => {
     if (index % 2 === 1) {
-      flexRow = 'flex-row-reverse';
+      flexRow = 'lg:flex-row-reverse';
     } else {
-      flexRow = '';
+      flexRow = 'lg:flex-row';
     }
     return flexRow;
   };
 
   return (
     <div
-      className={`flex ${evaluateStyling()} justify-between flex-wrap w-full gap-12`}
+      className={`flex ${evaluateStyling()} lg:w-[80%] flex-wrap flex-col-reverse gap-12`}
     >
-      <div className="max-w-[662px] min-w-[300px] flex-1 max-h-[567px]">
+      <div className="max-w-[462px] min-w-[300px] flex-1 max-h-[567px]">
         <img
           src={constant.image}
           className="object-contain"
           alt={constant.title}
         />
       </div>
-      <div className="flex flex-[0.7] min-w-[300px] flex-col gap-6 justify-center">
+      <div className="flex flex-1 min-w-[300px] flex-col gap-6 justify-center">
         <div
-          className={`${constant.tagColor} text-white rounded-[20px] w-[93px] py-2 flex items-center justify-center text-[20px] font-[600]`}
+          className={`${constant.tagColor} text-white rounded-[20px] w-[93px] py-2 flex items-center justify-center text-[16px] font-[600]`}
         >
           {constant.tag}
         </div>
-        <h2 className="text-[32px] font-[700]">{constant.title}</h2>
-        <p className="text-[20px] max-w-[500px] leading-9 font-[500]">
+        <h2 className="text-[28px] font-[700]">{constant.title}</h2>
+        <p className="text-[16px] font-Nunito max-w-[450px] leading-6 font-[500]">
           {constant.subTitle}
         </p>
         {constant.list && (
           <ul className="pl-8">
             {constant.list.map((item) => (
               <li
-                className="text-[20px] pl-4 max-w-[500px] leading-9 font-[500] list-disc"
+                className="text-[16px] font-Nunito pl-4 lg:max-w-[500px] leading-7 font-[400] list-disc"
                 key={item}
               >
                 {item}

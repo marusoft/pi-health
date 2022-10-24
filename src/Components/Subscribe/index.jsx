@@ -9,10 +9,10 @@ const Subscribe = () => {
       <Container>
         <div className="flex justify-between flex-wrap gap-8 items-center">
           <form className="flex-1 min-[320px] flex gap-2 flex-col">
-            <h2 className="text-[45px] text-[#1A1818EB] font-[600]">
+            <h2 className="text-[28px] text-[#1A1818EB] font-[600]">
               Lets stay in touch
             </h2>
-            <p className="text-[18px] mb-4 text-[#1A1818EB] font-[600]">
+            <p className="text-[16px] font-Nunito -translate-y-2 mb-4 text-[#1A1818EB] font-[600]">
               Get all our latest content and updates
             </p>
             <div className=" bg-white relative max-w-[450px] p-2 h-[60px]">

@@ -10,7 +10,7 @@ const HowItWorks = () => {
       <Container>
         <>
           <TitleWithBg>How it Works</TitleWithBg>
-          <div className="my-16 flex w-[90%] mx-auto flex-col flex-wrap gap-40">
+          <div className="my-16 flex w-full mx-auto items-center lg:items-center flex-col flex-wrap gap-[140px]">
             {constants.map((constant, index) => {
               return (
                 <ContentBox

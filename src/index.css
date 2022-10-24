@@ -10,3 +10,30 @@
   display: none;
   background-color: transparent;
 }
+
+.linear-gradient {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.01)
+    ),
+    url('./Assets/images/HeroImage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 500px) {
+  .linear-gradient {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('./Assets/images/HeroImage.png');
+    background-size: cover;
+  }
+}
+
+p {
+  font-size: 14px;
+}

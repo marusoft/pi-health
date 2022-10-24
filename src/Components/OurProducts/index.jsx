@@ -49,7 +49,7 @@ const OurProducts = () => {
           <div className="my-16 flex flex-col w-full ">
             <div
               ref={carouselRef}
-              className=" w-full flex scrollbar overflow-x-hidden snap-x mx-auto gap-20"
+              className=" w-full flex scrollbar px-8 overflow-x-hidden snap-x mx-auto gap-20"
             >
               <Carousel />
               <Carousel />
