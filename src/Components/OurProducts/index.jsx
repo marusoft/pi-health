@@ -3,6 +3,7 @@ import Container from '../Container';
 import TitleWithBg from '../TitleWithBg';
 import Carousel from './Carousel';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { PRODUCTS } from './productsData';
 
 const CarouselButton = ({ children, ...rest }) => (
   <button
@@ -13,32 +14,43 @@ const CarouselButton = ({ children, ...rest }) => (
   </button>
 );
 
+const Tracker = ({ trackerCounter, index }) => {
+  return (
+    <span
+      className={`h-[15px] w-[15px] flex rounded-full ${
+        trackerCounter === index && 'bg-[#313131D9]'
+      } items-center border-2 border-[#0000004D] justify-center`}
+    />
+  );
+};
+
 const OurProducts = () => {
   const carouselRef = useRef();
-  const [trackerCounter, setCounterTracker] = useState(1);
+  const [trackerCounter, setCounterTracker] = useState(0);
+  const [waiting, setWaiting] = useState(false);
 
   const handleNext = () => {
+    setWaiting(true);
     carouselRef.current.scrollBy({ left: 400, top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      setCounterTracker((prev) => {
-        if (prev === 3) {
-          prev = 3;
-          return prev;
-        } else return prev + 1;
-      });
-    }, 200);
+
+    setCounterTracker((prev) => {
+      if (prev === PRODUCTS.length - 1) {
+        prev = PRODUCTS.length - 1;
+        return prev;
+      } else return prev + 1;
+    });
   };
 
   const handlePrev = () => {
+    setWaiting(true);
     carouselRef.current.scrollBy({ left: -400, top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      setCounterTracker((prev) => {
-        if (prev === 1) {
-          prev = 1;
-          return prev;
-        } else return prev - 1;
-      });
-    }, 200);
+
+    setCounterTracker((prev) => {
+      if (prev === 0) {
+        prev = 0;
+        return prev;
+      } else return prev - 1;
+    });
   };
 
   return (
@@ -51,34 +63,44 @@ const OurProducts = () => {
               ref={carouselRef}
               className=" w-full flex scrollbar px-8 overflow-x-hidden snap-x mx-auto gap-20"
             >
-              <Carousel />
-              <Carousel />
-              <Carousel />
+              {PRODUCTS.map((product, index) => {
+                return <Carousel key={index} product={product} />;
+              })}
             </div>
             <div className="flex justify-between items-center gap-4 mt-8">
-              <CarouselButton onClick={handlePrev}>
+              <CarouselButton
+                disabled={waiting}
+                onClick={() => {
+                  handlePrev();
+                  setTimeout(() => {
+                    setWaiting(false);
+                  }, 1000);
+                }}
+              >
                 <BsArrowLeft />
               </CarouselButton>
 
               <div className="flex flex-row gap-3">
-                <span
-                  className={`h-[25px] w-[25px] flex rounded-full ${
-                    trackerCounter === 1 && 'bg-[#313131D9]'
-                  } items-center border-2 border-[#0000004D] justify-center`}
-                />
-                <span
-                  className={`h-[25px] w-[25px] flex rounded-full ${
-                    trackerCounter === 2 && 'bg-[#313131D9]'
-                  } items-center border-2 border-[#0000004D] justify-center`}
-                />
-                <span
-                  className={`h-[25px] w-[25px] flex rounded-full ${
-                    trackerCounter === 3 && 'bg-[#313131D9]'
-                  } items-center border-2 border-[#0000004D] justify-center`}
-                />
+                {PRODUCTS.map((tracker, index) => {
+                  return (
+                    <Tracker
+                      key={index}
+                      index={index}
+                      trackerCounter={trackerCounter}
+                    />
+                  );
+                })}
               </div>
 
-              <CarouselButton onClick={handleNext}>
+              <CarouselButton
+                disabled={waiting}
+                onClick={() => {
+                  handleNext();
+                  setTimeout(() => {
+                    setWaiting(false);
+                  }, 1000);
+                }}
+              >
                 <BsArrowRight />
               </CarouselButton>
             </div>
