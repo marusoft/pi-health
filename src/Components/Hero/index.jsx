@@ -42,7 +42,7 @@ const Hero = () => {
           return (
             <img
               key={image.alt}
-              className="min-w-[100vw] object-contain lg:object-cover h-full"
+              className="min-w-[100vw] object-cover h-full"
               src={image.image}
               alt={image.alt}
             />
