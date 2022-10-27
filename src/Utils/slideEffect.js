@@ -45,8 +45,22 @@ const slideEffect = (heroRef) =>
     const lastChild = heroRef.current.children.length - 1;
     const firstChild = heroRef.current.children[0];
 
-    observer.observe(firstChild);
-    lastChildObserver.observe(heroRef.current.children[lastChild]);
+    const mainContainerObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.observe(firstChild);
+          lastChildObserver.observe(heroRef.current.children[lastChild]);
+        } else {
+          observer.unobserve(firstChild);
+          lastChildObserver.unobserve(heroRef.current.children[lastChild]);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    mainContainerObserver.observe(heroRef.current);
   }, []);
 
 export default slideEffect;
