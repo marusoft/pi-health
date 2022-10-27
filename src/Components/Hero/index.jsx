@@ -3,10 +3,10 @@ import Button from '../Buttton';
 import routes from '../../Routes/routes.const';
 import Container from '../Container';
 // import StatsBar from '../StatBar';
-import HeroImageOne from '../../Assets/images/HeroImage.png';
-import HeroImageTwo from '../../Assets/images/hero-image-02.png';
-import HeroImageThree from '../../Assets/images/hero-image-03.png';
-import HeroImageFour from '../../Assets/images/hero-image-04.png';
+import HeroImageOne from '../../Assets/images/HeroImage.jpg';
+import HeroImageTwo from '../../Assets/images/hero-image-02.jpg';
+import HeroImageThree from '../../Assets/images/hero-image-03.jpg';
+import HeroImageFour from '../../Assets/images/hero-image-04.jpg';
 import slideEffect from '../../Utils/slideEffect';
 
 const IMAGES = [
@@ -56,7 +56,7 @@ const Hero = () => {
           <h2 className="text-white text-[28px] leading-9 capitalize font-[700] max-w-[320px] lg:max-w-[550px] lg:leading-[45px] lg:text-[35px]">
             AI powered remote monitoring tool for complex patients.
           </h2>
-          <p className="text-[18px] text-white font-Nunito font-[300] leading-[28px] tracking-tight w-[90%] lg:max-w-[560px]">
+          <p className="text-[18px] text-white font-Nunito font-[300] leading-[28px] tracking-wide w-[90%] lg:max-w-[560px]">
             PI-Health is a remote monitoring tool that provides risk stratified
             information enabling it to become a decision intelligence tool that
             allows clinicians make faster and better decisons concerning

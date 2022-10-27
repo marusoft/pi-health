@@ -27,7 +27,7 @@ const slideEffect = (heroRef) =>
         }
       },
       {
-        threshold: 1,
+        threshold: 0.8,
         root: heroRef.current,
       }
     );
@@ -57,7 +57,7 @@ const slideEffect = (heroRef) =>
       },
       {
         root: heroRef.current,
-        threshold: 1,
+        threshold: 0.7,
       }
     );
     const lastChild = heroRef.current.children.length - 1;
@@ -74,7 +74,7 @@ const slideEffect = (heroRef) =>
         }
       },
       {
-        threshold: 1,
+        threshold: 0.7,
       }
     );
 

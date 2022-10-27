@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full  ${
-        scrollPos > 600 ? 'bg-blue' : '[backdrop-filter:_blur(10px);]'
+        scrollPos > 600 ? 'bg-sky-700' : '[backdrop-filter:_blur(10px);]'
       }  z-50`}
     >
       <div className="max-w-[1440px] gap-4 justify-between flex items-center mx-auto h-[78px] [@media_(max-width:_1080px)]:hidden px-[56px]">

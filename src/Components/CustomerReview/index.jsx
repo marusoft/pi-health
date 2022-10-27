@@ -59,7 +59,7 @@ const Review = ({ review }) => {
 
 const ReviewContainer = ({ review }) => {
   return (
-    <div className="flex flex-1 snap-start lg:min-w-[540px] min-w-full rounded-[8px] bg-blue py-6 px-10 box-border mb-8 gap-8 flex-col">
+    <div className="flex flex-1 snap-start lg:min-w-[540px] min-w-full rounded-[8px] bg-sky-700 py-6 px-10 box-border mb-8 gap-8 flex-col">
       <Review review={review} />
     </div>
   );

@@ -1,11 +1,11 @@
-import CarouselImageOne from '../../Assets/images/carousel-image-01.png';
-import CarouselImageTwo from '../../Assets/images/carousel-image-02.png';
-import CarouselImageThree from '../../Assets/images/carousel-image-03.png';
-import CarouselImageFour from '../../Assets/images/carousel-image-04.png';
-import CarouselImageFive from '../../Assets/images/carousel-image-05.png';
-import CarouselImageSix from '../../Assets/images/carousel-image-06.png';
-import CarouselImageSeven from '../../Assets/images/carousel-image-07.png';
-import CarouselImageEight from '../../Assets/images/carousel-image-08.png';
+import CarouselImageOne from '../../Assets/images/carousel-image-01.jpg';
+import CarouselImageTwo from '../../Assets/images/carousel-image-02.jpg';
+import CarouselImageThree from '../../Assets/images/carousel-image-03.jpg';
+import CarouselImageFour from '../../Assets/images/carousel-image-04.jpg';
+import CarouselImageFive from '../../Assets/images/carousel-image-05.jpg';
+import CarouselImageSix from '../../Assets/images/carousel-image-06.jpg';
+import CarouselImageSeven from '../../Assets/images/carousel-image-07.jpg';
+import CarouselImageEight from '../../Assets/images/carousel-image-08.jpg';
 
 export const PRODUCTS = [
   {

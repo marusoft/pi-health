@@ -7,8 +7,11 @@ import {
   Subscribe,
   Layout,
 } from '../../Components';
+import StatsBar from '../../Components/StatBar';
 
 import windowResizerListener from '../../Utils/helper';
+
+const Spacing = () => <div className="w-full lg:h-[120px] h-[100px]" />;
 
 const Home = () => {
   const { windowWidth } = windowResizerListener();
@@ -23,18 +26,16 @@ const Home = () => {
         <>
           <Layout>
             <Hero />
-            <div className="w-full lg:h-[100px] h-[100px]" />
-            {windowWidth > 1289 && (
-              <div className="w-full lg:h-[100px] h-[150px]" />
-            )}
+            <StatsBar />
+            <Spacing />
             <HowItWorks />
-            <div className="w-full lg:h-[120px] h-[100px]" />
+            <Spacing />
             <OurProducts />
-            <div className="w-full lg:h-[120px] h-[100px]" />
+            <Spacing />
             <CustomerReview />
-            <div className="w-full lg:h-[120px] h-[100px]" />
+            <Spacing />
             <Subscribe />
-            <div className="w-full lg:h-[120px] h-[100px]" />
+            <Spacing />
           </Layout>
         </>
       )}

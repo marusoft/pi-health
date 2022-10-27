@@ -22,7 +22,7 @@ const Button = ({
       variant = 'bg-white text-dark';
       break;
     case VARIANT_CONST.SECONDARY:
-      variant = 'bg-blue text-white';
+      variant = 'bg-sky-700 text-white';
       break;
     case VARIANT_CONST.SECONDARY_TWO:
       variant = 'bg-dark text-white';
