@@ -4,6 +4,8 @@ import CarouselImageThree from '../../Assets/images/carousel-image-03.png';
 import CarouselImageFour from '../../Assets/images/carousel-image-04.png';
 import CarouselImageFive from '../../Assets/images/carousel-image-05.png';
 import CarouselImageSix from '../../Assets/images/carousel-image-06.png';
+import CarouselImageSeven from '../../Assets/images/carousel-image-07.png';
+import CarouselImageEight from '../../Assets/images/carousel-image-08.png';
 
 export const PRODUCTS = [
   {
@@ -43,13 +45,13 @@ export const PRODUCTS = [
     subtitle:
       'Designed for the most vulnerable patients. and people with long term conditions.',
 
-    image: CarouselImageOne,
+    image: CarouselImageSeven,
   },
   {
     subtitle:
       'Can assist with track and trace as once covid-19 symptoms are established carers are notified to isolate.',
 
-    image: CarouselImageOne,
+    image: CarouselImageEight,
   },
   {
     subtitle: 'Clinical dashboards and intelligent alert',
