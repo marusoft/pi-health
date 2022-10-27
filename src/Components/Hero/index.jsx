@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Button from '../Buttton';
 import routes from '../../Routes/routes.const';
 import Container from '../Container';
-import StatsBar from '../StatBar';
+// import StatsBar from '../StatBar';
 import HeroImageOne from '../../Assets/images/HeroImage.png';
 import HeroImageTwo from '../../Assets/images/hero-image-02.png';
 import HeroImageThree from '../../Assets/images/hero-image-03.png';
@@ -33,16 +33,17 @@ const Hero = () => {
   slideEffect(heroRef);
 
   return (
-    <section className="relative min-h-[1024px] w-screen">
+    <section className="relative md:max-h-[1024px] h-screen w-screen">
       <div
         ref={heroRef}
-        className="h-full flex w-full z-[-1] display overflow-x-scroll absolute"
+        className="lg:h-full flex w-full min-h-full z-[-1] display overflow-x-scroll absolute"
       >
         {IMAGES.map((image) => {
           return (
             <img
+              loading="lazy"
               key={image.alt}
-              className="min-w-[100vw] object-cover h-full"
+              className="min-w-[100vw] object-cover min-h-full"
               src={image.image}
               alt={image.alt}
             />
@@ -51,8 +52,7 @@ const Hero = () => {
       </div>
       <div className="h-full flex  w-full linear-gradient z-[-1] absolute"></div>
       <Container>
-        <div className="flex flex-col gap-10 justify-center">
-          <div className="lg:mt-40 mt-24" />
+        <div className="flex flex-col gap-10 h-screen justify-center">
           <h2 className="text-white text-[28px] leading-9 capitalize font-[700] max-w-[320px] lg:max-w-[550px] lg:leading-[45px] lg:text-[35px]">
             AI powered remote monitoring tool for complex patients.
           </h2>
@@ -62,7 +62,7 @@ const Hero = () => {
             allows clinicians make faster and better decisons concerning
             patients health.
           </p>
-          <div className="flex gap-8 items-center">
+          <div className="flex gap-8 mt-3 items-center">
             <Button
               type="button"
               variant="secondary"
@@ -83,7 +83,7 @@ const Hero = () => {
           </div>
         </div>
       </Container>
-      <StatsBar />
+      {/* <StatsBar /> */}
     </section>
   );
 };

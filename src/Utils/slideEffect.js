@@ -19,7 +19,7 @@ const slideEffect = (heroRef) =>
         }
       },
       {
-        threshold: 0.8,
+        threshold: 0.9,
         root: heroRef.current,
       }
     );
@@ -56,7 +56,7 @@ const slideEffect = (heroRef) =>
         }
       },
       {
-        threshold: 0.5,
+        threshold: 0.8,
       }
     );
 

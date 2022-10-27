@@ -28,7 +28,7 @@ const Navbar = () => {
                 key={navItem.label}
                 className="flex flex-[0.5]  items-center gap-4"
               >
-                {<img src={navItem.icon} alt={navItem.label} />}
+                {<img src={navItem.icon} loading="lazy" alt={navItem.label} />}
                 <h4 className="text-white [word-wrap:normal] min-w-max text-[16px] font-[600]">
                   {navItem.label}
                 </h4>

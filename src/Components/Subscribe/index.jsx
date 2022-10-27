@@ -27,6 +27,7 @@ const Subscribe = () => {
 
           <div className="flex-1 min-w-[320px] translate-y-[35px]">
             <img
+              loading="lazy"
               src={SubscribeImage}
               className="object-contain"
               alt="Subscribe"

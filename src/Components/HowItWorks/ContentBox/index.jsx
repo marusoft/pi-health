@@ -17,6 +17,7 @@ const ContentBox = ({ constant, index }) => {
     >
       <div className="max-w-[462px] min-w-[300px] flex-1 max-h-[567px]">
         <img
+          loading="lazy"
           src={constant.image}
           className="object-contain"
           alt={constant.title}

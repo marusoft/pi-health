@@ -24,7 +24,14 @@ const Footer = () => {
               to={routes.root}
               className="flex flex-[0.5] items-center gap-8"
             >
-              {<img src={heart} alt="HeartRate" className="scale-[1.2]" />}
+              {
+                <img
+                  src={heart}
+                  loading="lazy"
+                  alt="HeartRate"
+                  className="scale-[1.2]"
+                />
+              }
               <h2 className="text-white [word_-_wrap:normal] min-w-max text-[22px] font-[600]">
                 Pi-Health
               </h2>
