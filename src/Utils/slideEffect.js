@@ -9,7 +9,7 @@ const slideEffect = (heroRef) =>
         if (entries[0].isIntersecting) {
           clearTimeout(timeoutTwo);
           function toLeft() {
-            heroRef.current.scrollBy({
+            heroRef?.current?.scrollBy({
               top: 0,
               left: heroRef.current.children[0].clientWidth,
               behavior: 'smooth',
@@ -22,7 +22,7 @@ const slideEffect = (heroRef) =>
 
           scrollLeftInterval = toLeft;
           setTimeout(() => {
-            scrollLeftInterval();
+            if (window.location.pathname === '/') scrollLeftInterval();
           }, 2500);
         }
       },
@@ -38,7 +38,7 @@ const slideEffect = (heroRef) =>
           clearTimeout(timeoutOne);
 
           function toRight() {
-            heroRef.current.scrollBy({
+            heroRef?.current?.scrollBy({
               top: 0,
               left: -heroRef.current.children[0].clientWidth,
               behavior: 'smooth',
@@ -51,7 +51,7 @@ const slideEffect = (heroRef) =>
 
           scrollRightInterval = toRight;
           setTimeout(() => {
-            scrollRightInterval();
+            if (window.location.pathname === '/') scrollRightInterval();
           }, 2500);
         }
       },
@@ -66,11 +66,12 @@ const slideEffect = (heroRef) =>
     const mainContainerObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          observer.observe(firstChild);
-          lastChildObserver.observe(heroRef.current.children[lastChild]);
+          observer?.observe(firstChild);
+          lastChildObserver?.observe(heroRef?.current?.children[lastChild]);
         } else {
-          observer.unobserve(firstChild);
-          lastChildObserver.unobserve(heroRef.current.children[lastChild]);
+          observer?.unobserve(firstChild);
+          heroRef.current &&
+            lastChildObserver?.unobserve(heroRef?.current?.children[lastChild]);
         }
       },
       {
@@ -78,7 +79,7 @@ const slideEffect = (heroRef) =>
       }
     );
 
-    mainContainerObserver.observe(heroRef.current);
+    mainContainerObserver?.observe(heroRef.current);
   }, []);
 
 export default slideEffect;
