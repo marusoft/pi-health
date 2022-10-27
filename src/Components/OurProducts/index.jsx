@@ -58,7 +58,7 @@ const OurProducts = () => {
       <Container>
         <div>
           <TitleWithBg>Our Products</TitleWithBg>
-          <div className="my-16 flex flex-col w-full ">
+          <div className="mt-16 flex flex-col w-full ">
             <div
               ref={carouselRef}
               className=" w-full flex scrollbar px-8 overflow-x-hidden snap-x mx-auto gap-20"
