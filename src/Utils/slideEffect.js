@@ -2,24 +2,32 @@ import { useEffect } from 'react';
 
 const slideEffect = (heroRef) =>
   useEffect(() => {
-    let scrollRightInterval;
-    let scrollLeftInterval;
+    let scrollRightInterval, scrollLeftInterval, timeoutOne, timeoutTwo;
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          clearInterval(scrollRightInterval);
-          scrollLeftInterval = setInterval(() => {
+          clearTimeout(timeoutTwo);
+          function toLeft() {
             heroRef.current.scrollBy({
               top: 0,
               left: heroRef.current.children[0].clientWidth,
               behavior: 'smooth',
             });
+
+            timeoutOne = setTimeout(() => {
+              toLeft();
+            }, 2500);
+          }
+
+          scrollLeftInterval = toLeft;
+          setTimeout(() => {
+            scrollLeftInterval();
           }, 2500);
         }
       },
       {
-        threshold: 0.9,
+        threshold: 1,
         root: heroRef.current,
       }
     );
@@ -27,19 +35,29 @@ const slideEffect = (heroRef) =>
     const lastChildObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          clearInterval(scrollLeftInterval);
-          scrollRightInterval = setInterval(() => {
+          clearTimeout(timeoutOne);
+
+          function toRight() {
             heroRef.current.scrollBy({
               top: 0,
               left: -heroRef.current.children[0].clientWidth,
               behavior: 'smooth',
             });
+
+            timeoutTwo = setTimeout(() => {
+              toRight();
+            }, 2500);
+          }
+
+          scrollRightInterval = toRight;
+          setTimeout(() => {
+            scrollRightInterval();
           }, 2500);
         }
       },
       {
         root: heroRef.current,
-        threshold: 0.9,
+        threshold: 1,
       }
     );
     const lastChild = heroRef.current.children.length - 1;
@@ -56,7 +74,7 @@ const slideEffect = (heroRef) =>
         }
       },
       {
-        threshold: 0.8,
+        threshold: 1,
       }
     );
 
