@@ -53,7 +53,7 @@ const Hero = () => {
       <div className="h-full flex  w-full linear-gradient z-[-1] absolute"></div>
       <Container>
         <div className="flex flex-col gap-10 h-screen justify-center">
-          <h2 className="text-white text-[28px] leading-9 capitalize font-[700] max-w-[320px] lg:max-w-[550px] lg:leading-[45px] lg:text-[35px]">
+          <h2 className="text-white text-[28px] leading-10 capitalize font-[700] max-w-[680px] lg:max-w-[650px] lg:leading-[45px] lg:text-[35px]">
             AI powered remote monitoring tool for complex patients.
           </h2>
           <p className="text-[18px] text-white font-Nunito font-[300] leading-[28px] tracking-wide w-[90%] lg:max-w-[560px]">

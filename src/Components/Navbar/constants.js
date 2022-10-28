@@ -4,12 +4,13 @@ import routes from '../../Routes/routes.const';
 
 export const heart = Heart;
 
+export const LOGO = {
+  label: 'Pi-Health',
+  route: routes.root,
+  icon: Heart,
+};
+
 const NAV_CONTENT = [
-  {
-    label: 'Pi-Health',
-    route: routes.root,
-    icon: Heart,
-  },
   {
     label: 'Home',
     route: routes.root,
