@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ *
+ * @Skeleton - A component that shows when the browser is trying to load a page - (It pulsates)
+ */
+
 const Skeleton = () => (
   <div className="animate-pulse">
     <div className="flex sticky top-0 items-center justify-between shadow-bottom bg-white px-4 py-7">

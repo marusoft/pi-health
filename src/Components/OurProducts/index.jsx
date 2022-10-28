@@ -18,7 +18,7 @@ const Tracker = ({ trackerCounter, index }) => {
   return (
     <span
       className={`h-[15px] w-[15px] flex rounded-full ${
-        trackerCounter === index && 'bg-[#313131D9]'
+        trackerCounter === index && 'bg-sky-700'
       } items-center border-2 border-[#0000004D] justify-center`}
     />
   );

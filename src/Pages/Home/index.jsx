@@ -11,6 +11,11 @@ import StatsBar from '../../Components/StatBar';
 
 import windowResizerListener from '../../Utils/helper';
 
+/**
+ *@Spacing -  A Component used to add spacing between each section of the home page
+ *
+ **/
+
 const Spacing = () => <div className="w-full lg:h-[120px] h-[100px]" />;
 
 const Home = () => {
@@ -29,7 +34,11 @@ const Home = () => {
             <StatsBar />
             <Spacing />
             <HowItWorks />
-            <Spacing />
+            {windowWidth > 768 ? (
+              <Spacing />
+            ) : (
+              <div className="w-full lg:h-[120px] h-[10px]" />
+            )}
             <OurProducts />
             <Spacing />
             <CustomerReview />

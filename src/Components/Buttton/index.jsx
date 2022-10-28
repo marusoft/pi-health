@@ -32,7 +32,7 @@ const Button = ({
     <button
       className={`${variant} ${size} ${
         border?.toLowerCase() === 'yes' ? 'border border-dark' : null
-      } w-[154px] h-[48px] box-border font-[400] flex items-center hover:scale-[1.04] transition-all justify-center rounded-[3px] text-[14px]`}
+      } w-[154px] h-[48px] box-border font-[600] flex items-center hover:scale-[1.04] transition-all justify-center rounded-[3px] text-[14px]`}
       type={type}
       {...rest}
     >

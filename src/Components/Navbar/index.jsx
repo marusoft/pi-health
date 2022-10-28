@@ -21,7 +21,7 @@ const Navbar = () => {
         scrollPos > 600 ? 'bg-sky-700' : '[backdrop-filter:_blur(10px);]'
       }  z-50`}
     >
-      <div className="lg:max-w-[1440px] lg:gap-4 px-8 justify-between flex lg:items-center lg:mx-auto h-[78px] items-center lg:px-[56px]">
+      <div className="lg:max-w-[1440px] lg:gap-4 px-4 justify-between flex lg:items-center lg:mx-auto h-[78px] items-center lg:px-[56px]">
         <Link
           to={LOGO.route}
           key={LOGO.label}
@@ -37,7 +37,7 @@ const Navbar = () => {
             isOpen
               ? 'top-[0px] left-0'
               : 'lg:top-0 lg:left-0 -top-[30vh] -left-[200vw]'
-          } lg:z-1 z-[-1] transition-all duration-[1500] pl-8 h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-6 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
+          } lg:z-[2000] z-[-1] transition-all duration-[1500] pl-8 h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-6 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
         >
           {NAV_CONTENT.map((navItem) => {
             if (navItem.subList) {
@@ -87,7 +87,7 @@ const Navbar = () => {
           {!isOpen ? (
             <CgMenuLeft
               onClick={() => setIsOpen(true)}
-              className={`lg:hidden ${
+              className={`lg:hidden scale-x-[-1] scale-y-[-1] ${
                 isOpen ? 'hidden' : 'block'
               } text-white text-3xl`}
             />

@@ -23,7 +23,7 @@ const constants = [
     image: MainSectionImageThree,
     tag: '03',
     tagColor: 'bg-Pigreen',
-    title: 'Wearable',
+    title: 'Wearables',
     subTitle: 'The wearable performs functions such as:',
     list: [
       'Symptom monitoring',

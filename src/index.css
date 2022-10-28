@@ -4,6 +4,7 @@
 
 * {
   font-family: 'Syne', sans-serif;
+  outline: none;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -36,5 +37,9 @@
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
+  }
+
+  .subscribeMobile {
+    background-image: url('./Assets/images/subscribe-image-mobile.jpg');
   }
 }

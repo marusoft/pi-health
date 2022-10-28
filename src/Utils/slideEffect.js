@@ -1,5 +1,12 @@
 import { useEffect } from 'react';
 
+/**
+ *
+ * @param {*} heroRef - The reference to the scrolling container
+ * @slideEffect - A functions that checks whether an element is intersecting another element, which is the referencing element, and then scrolls the container if isIntersecting returns true.
+ *
+ */
+
 const slideEffect = (heroRef) =>
   useEffect(() => {
     let scrollRightInterval, scrollLeftInterval, timeoutOne, timeoutTwo;

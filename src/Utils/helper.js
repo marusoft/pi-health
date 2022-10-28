@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * @windowResizerListener - A function used to get the current viewport width of the browser
+ *
+ */
+
 const windowResizerListener = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
