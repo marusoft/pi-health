@@ -9,13 +9,13 @@ const Subscribe = () => {
       <Container>
         <div className="flex justify-between flex-wrap gap-8 items-center">
           <form className="flex-1 items-center lg:items-start min-[320px] flex gap-2 flex-col">
-            <h2 className="text-[28px] text-white lg:text-[#050505eb] font-[600]">
+            <h2 className="text-[28px] text-white [@media(min-width:_769px)]:text-[#050505eb] font-[600]">
               Lets stay in touch
             </h2>
-            <p className="text-[16px] font-Nunito -translate-y-2 mb-4 text-white lg:text-[#050505eb] font-[600]">
+            <p className="text-[16px] font-Nunito -translate-y-2 mb-4 text-white [@media(min-width:_769px)]:text-[#050505eb] font-[600]">
               Get all our latest content and updates
             </p>
-            <div className=" bg-white rounded-[3px] relative w-[80%] md:max-w-[380px] lg:min-w-[450px] p-2 h-[60px]">
+            <div className=" bg-white rounded-[3px] relative w-[99%] md:max-w-[520px] lg:min-w-[450px] p-2 h-[60px]">
               <input type="text" className="outline-none pl-4 w-[60%] h-full" />
               <div className="absolute right-1 top-[50%] -translate-y-[50%]">
                 <Buttton type="submit" variant="secondary">
