@@ -5,7 +5,7 @@ import Buttton from '../Buttton';
 
 const Subscribe = () => {
   return (
-    <section className="w-screen subscribeMobile bg-sky-200 py-8 h-max">
+    <section className="w-screen subscribeMobile bg-sky-200 lg:py-8 py-16 h-max">
       <Container>
         <div className="flex justify-between flex-wrap gap-8 items-center">
           <form className="flex-1 items-center lg:items-start min-[320px] flex gap-2 flex-col">
