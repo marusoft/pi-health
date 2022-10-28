@@ -34,8 +34,10 @@ const Navbar = () => {
         </Link>
         <div
           className={`absolute ${
-            isOpen ? 'top-[0px] left-0' : '-top-[30vh] -left-[200vw]'
-          } z-[-1] transition-all duration-[1500] pl-8 h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-6 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
+            isOpen
+              ? 'top-[0px] left-0'
+              : 'lg:top-0 lg:left-0 -top-[30vh] -left-[200vw]'
+          } lg:z-1 z-[-1] transition-all duration-[1500] pl-8 h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-6 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
         >
           {NAV_CONTENT.map((navItem) => {
             if (navItem.subList) {
