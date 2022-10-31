@@ -22,12 +22,12 @@ const HowItWorks = () => {
               gsap.to(`.${entry.target.classList[0]} .leftText`, {
                 x: 0,
                 opacity: 1,
-                duration: 1,
+                duration: 2.5,
               });
               gsap.to(`.${entry.target.classList[0]} .cont-image`, {
                 x: 0,
                 opacity: 1,
-                duration: 1,
+                duration: 2.5,
               });
             } else return;
           });
