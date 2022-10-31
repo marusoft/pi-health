@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from '../Buttton';
 import routes from '../../Routes/routes.const';
 import Container from '../Container';
-// import StatsBar from '../StatBar';
 import HeroImageOne from '../../Assets/images/HeroImage.jpg';
 import HeroImageTwo from '../../Assets/images/hero-image-02.jpg';
 import HeroImageThree from '../../Assets/images/hero-image-03.jpg';
 import HeroImageFour from '../../Assets/images/hero-image-04.jpg';
 import slideEffect from '../../Utils/slideEffect';
+import gsap from 'gsap';
 
 const IMAGES = [
   {
@@ -30,7 +30,34 @@ const IMAGES = [
 
 const Hero = () => {
   const heroRef = useRef();
+  const textRef = useRef();
+
   slideEffect(heroRef);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from('h2', {
+        opacity: 0,
+        y: 100,
+        ease: 'power3',
+        duration: 2,
+      });
+      gsap.from('p', {
+        opacity: 0,
+        y: 100,
+        ease: 'power3',
+        duration: 2,
+      });
+      gsap.from('.button', {
+        opacity: 0,
+        y: 100,
+        ease: 'power3',
+        duration: 2,
+      });
+    }, textRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section className="relative md:max-h-[1024px] h-screen w-screen">
@@ -52,17 +79,20 @@ const Hero = () => {
       </div>
       <div className="h-full flex  w-full linear-gradient z-[-1] absolute"></div>
       <Container>
-        <div className="flex flex-col gap-10 h-screen justify-center">
-          <h2 className="text-white text-[28px] leading-10 capitalize font-[700] max-w-[680px] lg:max-w-[650px] lg:leading-[45px] lg:text-[35px]">
+        <div
+          ref={textRef}
+          className="flex flex-col gap-10 h-screen justify-center"
+        >
+          <h2 className="box text-white text-[28px] leading-10 capitalize font-[700] max-w-[680px] lg:max-w-[650px] lg:leading-[45px] lg:text-[35px]">
             AI powered remote monitoring tool for complex patients.
           </h2>
-          <p className="text-[18px] text-white font-Nunito font-[300] leading-[28px] tracking-wide w-[90%] lg:max-w-[560px]">
+          <p className="circle text-[18px] text-white font-Nunito font-[300] leading-[28px] tracking-wide w-[90%] lg:max-w-[560px]">
             PI-Health is a remote monitoring tool that provides risk stratified
             information enabling it to become a decision intelligence tool that
             allows clinicians make faster and better decisons concerning
             patients health.
           </p>
-          <div className="flex gap-8 mt-3 items-center">
+          <div className="button flex gap-8 mt-3 items-center">
             <Button
               type="button"
               variant="secondary"
@@ -83,7 +113,6 @@ const Hero = () => {
           </div>
         </div>
       </Container>
-      {/* <StatsBar /> */}
     </section>
   );
 };

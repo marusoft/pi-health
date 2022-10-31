@@ -34,11 +34,14 @@ const Navbar = () => {
         </Link>
         <div
           className={`absolute ${
-            isOpen
-              ? 'top-[0px] left-0'
-              : 'lg:top-0 lg:left-0 -top-[30vh] -left-[200vw]'
-          } lg:z-[2000] z-[-1] transition-all duration-[1500] pl-4 h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-10 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
+            isOpen ? 'left-0 top-0' : 'top-0 lg:left-0 -left-[200vw]'
+          } lg:z-[2000] z-[-1] transition-all duration-1000 pl-4 lg:h-max h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-10 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
         >
+          <span
+            className={`h-[1px] w-32 lg:hidden ${
+              isOpen ? '-translate-x-0' : '-translate-x-40'
+            }  bg-white transition-all delay-700 ease-in-out duration-1000`}
+          />
           {NAV_CONTENT.map((navItem) => {
             if (navItem.subList) {
               return (
@@ -46,7 +49,11 @@ const Navbar = () => {
                   onClick={(e) => toggleSubList(e, navItem.label)}
                   role="button"
                   key={navItem.label}
-                  className="flex relative gap-2 items-center"
+                  className={`flex ${
+                    isOpen
+                      ? '[@media(max-width:_1020px)]:-translate-x-0 delay-1000'
+                      : '[@media(max-width:_1020px)]:-translate-x-80'
+                  } transition-all duration-500 relative gap-2 items-center`}
                 >
                   <h4 className="text-white text-[14px] font-[600]">
                     {navItem.label}
@@ -74,7 +81,11 @@ const Navbar = () => {
               return (
                 <Link
                   to={navItem.route}
-                  className="text-white text-[14px] font-[600]"
+                  className={`text-white ${
+                    isOpen
+                      ? '[@media(max-width:_1020px)]:-translate-x-0 delay-1000'
+                      : '[@media(max-width:_1020px)]:-translate-x-80'
+                  } transition-all duration-500  text-[14px] font-[600]`}
                   key={navItem.label}
                 >
                   {navItem.label}
@@ -82,6 +93,11 @@ const Navbar = () => {
               );
             }
           })}
+          <span
+            className={`h-[1px] lg:hidden w-32 ${
+              isOpen ? '-translate-x-0' : '-translate-x-40'
+            }  bg-white transition-all ease-in-out delay-700 duration-1000`}
+          />
         </div>
         <div>
           {!isOpen ? (

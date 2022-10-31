@@ -1,14 +1,50 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Container from '../Container';
 import SubscribeImage from '../../Assets/images/subscribe-image.png';
 import Buttton from '../Buttton';
+import gsap from 'gsap';
 
 const Subscribe = () => {
+  const parentRef = useRef();
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to('.image', {
+              x: 0,
+              opacity: 1,
+              duration: 1,
+            });
+            setTimeout(() => {
+              gsap.to('.letter', {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+              });
+            }, 300);
+          }
+        },
+        {
+          threshold: 0.6,
+        }
+      );
+
+      observer.observe(parentRef.current);
+    }, parentRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-screen subscribeMobile bg-sky-200 lg:py-8 py-16 h-max">
+    <section
+      ref={parentRef}
+      className="w-screen subscribeMobile bg-sky-200 lg:py-8 py-16 h-max"
+    >
       <Container>
         <div className="flex justify-between flex-wrap gap-8 items-center">
-          <form className="flex-1 items-center lg:items-start min-[320px] flex gap-2 flex-col">
+          <form className="letter -translate-x-[100vw] opacity-0 flex-1 items-center lg:items-start min-[320px] flex gap-2 flex-col">
             <h2 className="text-[28px] text-white [@media(min-width:_769px)]:text-[#050505eb] font-[600]">
               Lets stay in touch
             </h2>
@@ -25,7 +61,7 @@ const Subscribe = () => {
             </div>
           </form>
 
-          <div className="flex-1 lg:flex hidden min-w-[320px] translate-y-[35px]">
+          <div className="image translate-x-[100vw] opacity-0 flex-1 lg:flex hidden min-w-[320px] translate-y-[35px]">
             <img
               src={SubscribeImage}
               className="object-contain"

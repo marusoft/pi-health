@@ -16,11 +16,11 @@ export const content = [
 ];
 
 export const StatsBarContent = ({ subTitle, title }) => (
-  <div className="flex flex-col snap-center items-center gap-4 min-w-[250px] p-4  h-max justify-center text-[#f9f9f9]">
+  <div className="flex flex-col  flex-wrap items-center gap-4 min-w-[250px] max-w-[350px] p-4  h-max justify-center text-[#f9f9f9]">
     <span className="font-[700] flex items-center justify-center h-[100px] w-[100px] rounded-full [border:4px_solid_white] text-[28px] font-Nunito tracking-[0.4px] ">
       {title}
     </span>
-    <p className="font-[400] h-[80px]  text-center max-w-[350px] font-Nunito text-[14px] tracking-wide leading-5">
+    <p className="font-[400] h-[80px]  text-center flex-wrap break-words font-Nunito text-[14px] tracking-wide leading-5">
       {subTitle}
     </p>
   </div>
@@ -30,15 +30,17 @@ const StatsBar = () => {
   return (
     <section className="flex h-max py-4 pt-12 bg-sky-700 items-center z-10 w-full gap-4 box-border">
       <Container>
-        <div className="flex flex-row scrollbar snap-x overflow-x-scroll justify-between items-center w-full gap-2">
-          {content.map((item, index) => (
-            <StatsBarContent
-              key={item.title}
-              title={item.title}
-              index={index}
-              subTitle={item.subTitle}
-            />
-          ))}
+        <div className="marquee">
+          <div className="flex flex-row justify-between items-center w-full gap-2 content">
+            {content.map((item, index) => (
+              <StatsBarContent
+                key={item.title}
+                title={item.title}
+                index={index}
+                subTitle={item.subTitle}
+              />
+            ))}
+          </div>
         </div>
       </Container>
     </section>

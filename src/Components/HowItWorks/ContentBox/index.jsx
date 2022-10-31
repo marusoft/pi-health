@@ -13,7 +13,7 @@ const ContentBox = ({ constant, index }) => {
 
   return (
     <div
-      className={`flex ${evaluateStyling()} lg:w-[80%] flex-wrap flex-col-reverse gap-12`}
+      className={`work-${index} opacity-0 translate-y-[20%] flex ${evaluateStyling()} lg:w-[80%] flex-wrap flex-col-reverse gap-12`}
     >
       {constant.list && window.innerWidth <= 768 && (
         <ul className="pl-8 lg:translate-y-0 -translate-y-[40px]">
@@ -37,7 +37,7 @@ const ContentBox = ({ constant, index }) => {
         <img
           loading="lazy"
           src={constant.image}
-          className="object-contain"
+          className={`object-contain ${index === 1 && 'rounded-2xl'}`}
           alt={constant.title}
         />
       </div>

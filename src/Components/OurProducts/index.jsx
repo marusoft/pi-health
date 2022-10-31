@@ -1,64 +1,52 @@
-import React, { useRef, useState } from 'react';
+import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import { CarouselNavs } from '../CarouselNavs';
 import Container from '../Container';
 import TitleWithBg from '../TitleWithBg';
 import Carousel from './Carousel';
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+
 import { PRODUCTS } from './productsData';
-
-const CarouselButton = ({ children, ...rest }) => (
-  <button
-    {...rest}
-    className="bg-[rgba(0,0,0,0.3)] rounded-full flex items-center justify-center text-white text-xl w-[40px] h-[40px]"
-  >
-    {children}
-  </button>
-);
-
-const Tracker = ({ trackerCounter, index }) => {
-  return (
-    <span
-      className={`h-[15px] w-[15px] flex rounded-full ${
-        trackerCounter === index && 'bg-sky-700'
-      } items-center border-2 border-[#0000004D] justify-center`}
-    />
-  );
-};
 
 const OurProducts = () => {
   const carouselRef = useRef();
-  const [trackerCounter, setCounterTracker] = useState(0);
-  const [waiting, setWaiting] = useState(false);
+  const parentRef = useRef();
 
-  const handleNext = () => {
-    setWaiting(true);
-    carouselRef.current.scrollBy({ left: 400, top: 0, behavior: 'smooth' });
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to('.child', {
+              y: 0,
+              opacity: 1,
+              duration: 2,
+            });
+            setTimeout(() => {
+              gsap.to('.main', {
+                x: 0,
+                opacity: 1,
+                duration: 2,
+              });
+            }, 300);
+          }
+        },
+        {
+          threshold: 0.6,
+        }
+      );
 
-    setCounterTracker((prev) => {
-      if (prev === PRODUCTS.length - 1) {
-        prev = PRODUCTS.length - 1;
-        return prev;
-      } else return prev + 1;
-    });
-  };
+      observer.observe(parentRef.current);
+    }, parentRef);
 
-  const handlePrev = () => {
-    setWaiting(true);
-    carouselRef.current.scrollBy({ left: -400, top: 0, behavior: 'smooth' });
-
-    setCounterTracker((prev) => {
-      if (prev === 0) {
-        prev = 0;
-        return prev;
-      } else return prev - 1;
-    });
-  };
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="w-screen h-max">
+    <section ref={parentRef} className="w-screen h-max">
       <Container>
         <div>
           <TitleWithBg>Our Products</TitleWithBg>
-          <div className="mt-16 flex flex-col w-full ">
+          <div className="main translate-x-[100vw] opacity-0 mt-16 flex flex-col w-full ">
             <div
               ref={carouselRef}
               className=" w-full flex scrollbar px-8 overflow-x-hidden snap-x mx-auto gap-20"
@@ -67,43 +55,7 @@ const OurProducts = () => {
                 return <Carousel key={index} product={product} />;
               })}
             </div>
-            <div className="flex justify-between items-center gap-4 mt-8">
-              <CarouselButton
-                disabled={waiting}
-                onClick={() => {
-                  handlePrev();
-                  setTimeout(() => {
-                    setWaiting(false);
-                  }, 1000);
-                }}
-              >
-                <BsArrowLeft />
-              </CarouselButton>
-
-              <div className="flex flex-row gap-3">
-                {PRODUCTS.map((tracker, index) => {
-                  return (
-                    <Tracker
-                      key={index}
-                      index={index}
-                      trackerCounter={trackerCounter}
-                    />
-                  );
-                })}
-              </div>
-
-              <CarouselButton
-                disabled={waiting}
-                onClick={() => {
-                  handleNext();
-                  setTimeout(() => {
-                    setWaiting(false);
-                  }, 1000);
-                }}
-              >
-                <BsArrowRight />
-              </CarouselButton>
-            </div>
+            <CarouselNavs carouselRef={carouselRef} PRODUCTS={PRODUCTS} />
           </div>
         </div>
       </Container>
