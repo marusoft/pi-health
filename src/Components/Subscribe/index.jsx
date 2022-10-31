@@ -52,9 +52,12 @@ const Subscribe = () => {
               Get all our latest content and updates
             </p>
             <div className=" bg-white rounded-[3px] relative w-[99%] md:max-w-[520px] lg:min-w-[450px] p-2 h-[60px]">
-              <input type="text" className="outline-none pl-4 w-[60%] h-full" />
+              <input
+                type="text"
+                className="outline-none pl-4 w-[70%] md:w-[60%] h-full"
+              />
               <div className="absolute right-1 top-[50%] -translate-y-[50%]">
-                <Buttton type="submit" variant="secondary">
+                <Buttton size="w-[100px]" type="submit" variant="secondary">
                   Subscribe
                 </Buttton>
               </div>

@@ -28,7 +28,7 @@ const HowItWorks = () => {
           });
         },
         {
-          threshold: 0.6,
+          threshold: window.innerWidth > 768 ? 0.6 : 0.4,
         }
       );
       Array.from(parentRef.current.children).forEach((child) =>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import {
   AiFillFacebook,
   AiFillYoutube,
@@ -12,18 +13,66 @@ import NAV_CONTENT, { heart } from '../Navbar/constants';
 import navFunctions from '../Navbar/navFunctions';
 
 const Footer = () => {
+  const footerRef = useRef();
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            gsap.to('.links-container', {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+            });
+            gsap.to('.logo', {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+            });
+
+            gsap.to('.socials', {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+            });
+
+            gsap.to('.contact', {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+            });
+          }
+        },
+        {
+          threshold: 0.7,
+        }
+      );
+
+      observer.observe(footerRef.current);
+    }, footerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const { showList, setShowList, toggleSubList } = navFunctions();
   return (
-    <div className="w-full mt-24 flex justify-center bottom-0 bg-sky-700">
+    <div
+      ref={footerRef}
+      className="w-full mt-24 flex justify-center bottom-0 bg-sky-700"
+    >
       <Container>
         <div className="flex items-center flex-col w-full gap-4 [col-gap:2rem] py-16 justify-center">
-          <Link to={routes.root} className="flex flex-[0.5] items-center gap-2">
+          <Link
+            to={routes.root}
+            className="flex flex-[0.5] logo -translate-y-[20px] opacity-0 items-center gap-2"
+          >
             {<img src={heart} loading="lazy" alt="HeartRate" />}
-            <h2 className="text-white [word_-_wrap:normal] min-w-max text-[22px] font-[600]">
+            <h2 className=" text-white [word_-_wrap:normal] min-w-max text-[22px] font-[600]">
               Pi-Health
             </h2>
           </Link>
-          <div className="flex flex-1 flex-wrap items-center justify-center gap-6">
+          <div className="links-container -translate-y-[20px] opacity-0 flex flex-1 flex-wrap items-center justify-center gap-6">
             {NAV_CONTENT.map((navItem) => {
               if (navItem.subList) {
                 return (
@@ -69,7 +118,7 @@ const Footer = () => {
             })}
           </div>
           <div className="w-full h-[1px] [border:0.5px_solid_rgb(255,255,255,0.3)] my-10" />
-          <div className="flex flex-col gap-6 flex-1">
+          <div className="socials translate-y-[20px] opacity-0 flex flex-col gap-6 flex-1">
             <div className="text-white flex items-center gap-3 text-[20px]">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-transparent [border:.5px_solid_white]">
                 <AiOutlineTwitter className="w-[50%] h-[50%]" />
@@ -85,7 +134,7 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="flex items-center text-white gap-4">
+          <div className="contact -translate-y-[20px] opacity-0 flex items-center text-white gap-4">
             <p className="text-[14px] font-Nunito font-[600]">
               +44 161 3620 101
             </p>
