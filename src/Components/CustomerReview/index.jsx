@@ -75,7 +75,7 @@ const ReviewInfo = () => {
     <div className="flex p-8 lg:-translate-y-[20px] flex-col max-w-[821px] min-w-[320px] gap-4 flex-1">
       <TitleWithBg>Customer Review</TitleWithBg>
 
-      <p className="para translate-x-[100vw] opacity-0 text-[16px] text-center font-[500]">
+      <p className="para -translate-y-[25px] opacity-0 text-[16px] text-center font-[500]">
         Our Customers know how dedicated we are. Pi-Health has been touching
         lives over the years while delivering satisfaction and achieving clients
         goals
@@ -99,13 +99,13 @@ const CustomerReview = () => {
               duration: 1,
             });
             gsap.to('.para', {
-              x: 0,
+              y: 0,
               opacity: 1,
               duration: 1,
             });
             setTimeout(() => {
               gsap.to('.review', {
-                x: 0,
+                y: 0,
                 opacity: 1,
                 duration: 1,
               });
@@ -130,7 +130,7 @@ const CustomerReview = () => {
           <ReviewInfo />
           <div
             ref={carouselRef}
-            className="review -translate-x-[100vw] opacity-0 flex gap-8 scrollbar snap-x w-full overflow-x-scroll"
+            className="review translate-y-[25px] opacity-0 flex gap-8 scrollbar snap-x w-full overflow-x-scroll"
           >
             {REVIEWS.map((review) => {
               return <ReviewContainer key={review.header} review={review} />;

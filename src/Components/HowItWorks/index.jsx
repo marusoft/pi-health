@@ -17,12 +17,17 @@ const HowItWorks = () => {
               gsap.to('.child', {
                 y: 0,
                 opacity: 1,
-                duration: 2,
+                duration: 1,
               });
-              gsap.to(`.${entry.target.classList[0]}`, {
-                y: 0,
+              gsap.to(`.${entry.target.classList[0]} .leftText`, {
+                x: 0,
                 opacity: 1,
-                duration: 2,
+                duration: 1,
+              });
+              gsap.to(`.${entry.target.classList[0]} .cont-image`, {
+                x: 0,
+                opacity: 1,
+                duration: 1,
               });
             } else return;
           });
