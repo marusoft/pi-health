@@ -5,13 +5,14 @@ import HeroImageOne from '../../../../Assets/images/HeroImage.jpg';
 import HeroImageTwo from '../../../../Assets/images/hero-image-02.jpg';
 import HeroImageThree from '../../../../Assets/images/hero-image-03.jpg';
 import HeroImageFour from '../../../../Assets/images/hero-image-04.jpg';
+import HeroImageFive from '../../../../Assets/images/hero-image-05.jpg';
 import slideEffect from '../../../../Utils/slideEffect';
 import gsap, { Elastic } from 'gsap';
 
 const IMAGES = [
   {
-    image: HeroImageOne,
-    alt: 'elderly',
+    image: HeroImageFive,
+    alt: 'dog',
   },
   {
     image: HeroImageTwo,
@@ -23,7 +24,11 @@ const IMAGES = [
   },
   {
     image: HeroImageFour,
-    alt: 'animal',
+    alt: 'horse',
+  },
+  {
+    image: HeroImageOne,
+    alt: 'elderly',
   },
 ];
 

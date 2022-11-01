@@ -45,7 +45,7 @@ const Subscribe = () => {
     >
       <Container>
         <div className="flex justify-between flex-wrap gap-8 items-center">
-          <form className="letter -translate-x-[100vw] opacity-0 flex-1 items-center lg:items-start min-[320px] flex gap-2 flex-col">
+          <form className="letter -translate-x-[30vw] opacity-0 flex-1 items-center lg:items-start min-[320px] flex gap-2 flex-col">
             <h2 className="text-[28px] text-white [@media(min-width:_769px)]:text-[#050505eb] font-[600]">
               Lets stay in touch
             </h2>
@@ -65,7 +65,7 @@ const Subscribe = () => {
             </div>
           </form>
 
-          <div className="image translate-x-[100vw] opacity-0 flex-1 lg:flex hidden min-w-[320px] translate-y-[35px]">
+          <div className="image translate-x-[30vw] opacity-0 flex-1 lg:flex hidden min-w-[320px] translate-y-[35px]">
             <img
               src={SubscribeImage}
               className="object-contain"
