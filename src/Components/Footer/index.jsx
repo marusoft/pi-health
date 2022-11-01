@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import gsap, { Elastic } from 'gsap';
 import {
   AiFillFacebook,
   AiFillYoutube,
@@ -24,23 +24,27 @@ const Footer = () => {
               y: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
             gsap.to('.logo', {
               y: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
 
             gsap.to('.socials', {
               y: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
 
             gsap.to('.contact', {
               y: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
           }
         },

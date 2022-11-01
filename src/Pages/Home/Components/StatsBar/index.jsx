@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../Container';
+import { Container } from '../../../../Components';
 
 export const content = [
   { title: '17M', subTitle: 'People over 60 with co-morbidities.' },

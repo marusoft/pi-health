@@ -1,7 +1,6 @@
-import gsap from 'gsap';
+import gsap, { Elastic } from 'gsap';
 import React, { useEffect, useRef } from 'react';
-import Container from '../Container';
-import TitleWithBg from '../TitleWithBg';
+import { Container, TitleWithBg } from '../../../../Components';
 import constants from './constants';
 import ContentBox from './ContentBox';
 
@@ -18,16 +17,19 @@ const HowItWorks = () => {
                 y: 0,
                 opacity: 1,
                 duration: 1,
+                ease: Elastic.easeOut.config(1, 0.3),
               });
               gsap.to(`.${entry.target.classList[0]} .leftText`, {
                 x: 0,
                 opacity: 1,
                 duration: 2.5,
+                ease: Elastic.easeOut.config(1, 0.3),
               });
               gsap.to(`.${entry.target.classList[0]} .cont-image`, {
                 x: 0,
                 opacity: 1,
                 duration: 2.5,
+                ease: Elastic.easeOut.config(1, 0.3),
               });
             } else return;
           });

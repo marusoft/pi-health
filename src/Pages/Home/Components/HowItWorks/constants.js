@@ -1,6 +1,6 @@
-import MainSectionImageOne from '../../Assets/images/main-section-image-01.png';
-import MainSectionImageTwo from '../../Assets/images/main-section-image-02.png';
-import MainSectionImageThree from '../../Assets/images/main-section-image-03.png';
+import MainSectionImageOne from '../../../../Assets/images/main-section-image-01.png';
+import MainSectionImageTwo from '../../../../Assets/images/main-section-image-02.png';
+import MainSectionImageThree from '../../../../Assets/images/main-section-image-03.png';
 
 const constants = [
   {

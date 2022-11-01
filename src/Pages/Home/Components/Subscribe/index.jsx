@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import Container from '../Container';
-import SubscribeImage from '../../Assets/images/subscribe-image.png';
-import Buttton from '../Buttton';
-import gsap from 'gsap';
+import SubscribeImage from '../../../../Assets/images/subscribe-image.png';
+import { Button, Container } from '../../../../Components';
+import gsap, { Elastic } from 'gsap';
 
 const Subscribe = () => {
   const parentRef = useRef();
@@ -16,12 +15,14 @@ const Subscribe = () => {
               x: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
             setTimeout(() => {
               gsap.to('.letter', {
                 x: 0,
                 opacity: 1,
                 duration: 1,
+                ease: Elastic.easeOut.config(1, 0.3),
               });
             }, 300);
           }
@@ -57,9 +58,9 @@ const Subscribe = () => {
                 className="outline-none pl-4 w-[70%] md:w-[60%] h-full"
               />
               <div className="absolute right-1 top-[50%] -translate-y-[50%]">
-                <Buttton size="w-[100px]" type="submit" variant="secondary">
+                <Button size="w-[100px]" type="submit" variant="secondary">
                   Subscribe
-                </Buttton>
+                </Button>
               </div>
             </div>
           </form>

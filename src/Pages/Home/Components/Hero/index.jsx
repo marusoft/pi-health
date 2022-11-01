@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import Button from '../Buttton';
-import routes from '../../Routes/routes.const';
-import Container from '../Container';
-import HeroImageOne from '../../Assets/images/HeroImage.jpg';
-import HeroImageTwo from '../../Assets/images/hero-image-02.jpg';
-import HeroImageThree from '../../Assets/images/hero-image-03.jpg';
-import HeroImageFour from '../../Assets/images/hero-image-04.jpg';
-import slideEffect from '../../Utils/slideEffect';
-import gsap from 'gsap';
+import { Button, Container } from '../../../../Components';
+import routes from '../../../../Routes/routes.const';
+import HeroImageOne from '../../../../Assets/images/HeroImage.jpg';
+import HeroImageTwo from '../../../../Assets/images/hero-image-02.jpg';
+import HeroImageThree from '../../../../Assets/images/hero-image-03.jpg';
+import HeroImageFour from '../../../../Assets/images/hero-image-04.jpg';
+import slideEffect from '../../../../Utils/slideEffect';
+import gsap, { Elastic } from 'gsap';
 
 const IMAGES = [
   {
@@ -39,19 +38,19 @@ const Hero = () => {
       gsap.from('h2', {
         opacity: 0,
         y: 100,
-        ease: 'power3',
+        ease: Elastic.easeOut.config(1, 0.3),
         duration: 2,
       });
       gsap.from('p', {
         opacity: 0,
         y: 100,
-        ease: 'power3',
+        ease: Elastic.easeOut.config(1, 0.3),
         duration: 2,
       });
       gsap.from('.button', {
         opacity: 0,
         y: 100,
-        ease: 'power3',
+        ease: Elastic.easeOut.config(1, 0.3),
         duration: 2,
       });
     }, textRef);

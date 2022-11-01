@@ -5,9 +5,9 @@ import {
   HowItWorks,
   OurProducts,
   Subscribe,
-  Layout,
-} from '../../Components';
-import StatsBar from '../../Components/StatBar';
+  StatsBar,
+} from './Components';
+import { Layout } from '../../Components';
 
 import windowResizerListener from '../../Utils/helper';
 

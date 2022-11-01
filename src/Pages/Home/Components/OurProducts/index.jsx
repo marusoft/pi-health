@@ -1,8 +1,7 @@
-import gsap from 'gsap';
+import gsap, { Elastic } from 'gsap';
 import React, { useEffect, useRef } from 'react';
 import { CarouselNavs } from '../CarouselNavs';
-import Container from '../Container';
-import TitleWithBg from '../TitleWithBg';
+import { Container, TitleWithBg } from '../../../../Components';
 import Carousel from './Carousel';
 
 import { PRODUCTS } from './productsData';
@@ -20,12 +19,14 @@ const OurProducts = () => {
               y: 0,
               opacity: 1,
               duration: 2,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
             setTimeout(() => {
               gsap.to('.main', {
                 x: 0,
                 opacity: 1,
                 duration: 2,
+                ease: Elastic.easeOut.config(1, 0.3),
               });
             }, 300);
           }

@@ -1,11 +1,10 @@
-import gsap from 'gsap';
+import gsap, { Elastic } from 'gsap';
 import React, { useEffect, useRef } from 'react';
-import ReviewImageOne from '../../Assets/images/review-image-01.png';
-import ReviewImageTwo from '../../Assets/images/review-image-02.png';
-import ReviewImageThree from '../../Assets/images/review-image-03.png';
+import ReviewImageOne from '../../../../Assets/images/review-image-01.png';
+import ReviewImageTwo from '../../../../Assets/images/review-image-02.png';
+import ReviewImageThree from '../../../../Assets/images/review-image-03.png';
 import { CarouselNavs } from '../CarouselNavs';
-import Container from '../Container';
-import TitleWithBg from '../TitleWithBg';
+import { Container, TitleWithBg } from '../../../../Components';
 
 const REVIEWS = [
   {
@@ -97,17 +96,20 @@ const CustomerReview = () => {
               y: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
             gsap.to('.para', {
               y: 0,
               opacity: 1,
               duration: 1,
+              ease: Elastic.easeOut.config(1, 0.3),
             });
             setTimeout(() => {
               gsap.to('.review', {
                 y: 0,
                 opacity: 1,
                 duration: 1,
+                ease: Elastic.easeOut.config(1, 0.3),
               });
             }, 300);
           }
