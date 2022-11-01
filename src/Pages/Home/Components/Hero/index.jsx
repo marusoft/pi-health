@@ -44,12 +44,14 @@ const Hero = () => {
       gsap.from('p', {
         opacity: 0,
         y: 100,
+        delay: 1,
         ease: Elastic.easeOut.config(1, 0.3),
         duration: 2,
       });
       gsap.from('.button', {
         opacity: 0,
         y: 100,
+        delay: 1.5,
         ease: Elastic.easeOut.config(1, 0.3),
         duration: 2,
       });

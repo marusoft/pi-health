@@ -24,6 +24,7 @@ const Footer = () => {
               y: 0,
               opacity: 1,
               duration: 1,
+              delay: 1,
               ease: Elastic.easeOut.config(1, 0.3),
             });
             gsap.to('.logo', {
@@ -37,6 +38,7 @@ const Footer = () => {
               y: 0,
               opacity: 1,
               duration: 1,
+              delay: 1.5,
               ease: Elastic.easeOut.config(1, 0.3),
             });
 
@@ -44,6 +46,7 @@ const Footer = () => {
               y: 0,
               opacity: 1,
               duration: 1,
+              delay: 2,
               ease: Elastic.easeOut.config(1, 0.3),
             });
           }

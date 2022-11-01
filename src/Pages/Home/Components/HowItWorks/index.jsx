@@ -23,6 +23,7 @@ const HowItWorks = () => {
                 x: 0,
                 opacity: 1,
                 duration: 2.5,
+                delay: 0.5,
                 ease: Elastic.easeOut.config(1, 0.3),
               });
               gsap.to(`.${entry.target.classList[0]} .cont-image`, {
