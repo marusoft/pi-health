@@ -94,9 +94,8 @@ const Hero = () => {
           </h2>
           <p className="circle text-[18px] text-white font-Nunito font-[300] leading-[28px] tracking-wide w-[90%] lg:max-w-[560px]">
             PI-Health is a remote monitoring tool that provides risk stratified
-            information enabling it to become a decision intelligence tool that
-            allows clinicians make faster and better decisons concerning
-            patients health.
+            information and decision intelligence tool that allows clinicians
+            make faster and better decisons concerning patients health.
           </p>
           <div className="button flex gap-8 mt-3 items-center">
             <Button

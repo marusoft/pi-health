@@ -16,38 +16,30 @@ import windowResizerListener from '../../Utils/helper';
  *
  **/
 
-const Spacing = () => <div className="w-full lg:h-[120px] h-[100px]" />;
+export const Spacing = () => <div className="w-full lg:h-[120px] h-[100px]" />;
 
 const Home = () => {
   const { windowWidth } = windowResizerListener();
 
   return (
     <section>
-      {windowWidth < 200 ? (
-        <div className="text-[40px] text-center font-[600] flex w-full h-screen items-center justify-center">
-          Website Not Optimised for Mobile view at the moment
-        </div>
-      ) : (
-        <>
-          <Layout>
-            <Hero />
-            <StatsBar />
-            <Spacing />
-            <HowItWorks />
-            {windowWidth > 768 ? (
-              <Spacing />
-            ) : (
-              <div className="w-full lg:h-[120px] h-[10px]" />
-            )}
-            <OurProducts />
-            <Spacing />
-            <CustomerReview />
-            <Spacing />
-            <Subscribe />
-            <Spacing />
-          </Layout>
-        </>
-      )}
+      <Layout>
+        <Hero />
+        <StatsBar />
+        <Spacing />
+        <HowItWorks />
+        {windowWidth > 768 ? (
+          <Spacing />
+        ) : (
+          <div className="w-full lg:h-[120px] h-[10px]" />
+        )}
+        <OurProducts />
+        <Spacing />
+        <CustomerReview />
+        <Spacing />
+        <Subscribe />
+        <Spacing />
+      </Layout>
     </section>
   );
 };

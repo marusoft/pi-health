@@ -1,9 +1,10 @@
 const routes = {
   root: '/',
   services: '/services',
-  programOne: '/programOne',
-  programTwo: '/programTwo',
-  programThree: '/programThree',
+  elderly: '/elderly',
+  pet: '/pet',
+  sports: '/sports',
+  kids: '/kids',
   features: '/features',
   howItWorks: '/how-it-works',
   contact: '/contact',
