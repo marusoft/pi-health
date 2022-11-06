@@ -29,7 +29,7 @@ const Products = ({ title, image, listArray, identifier, prodRef }) => (
     <div
       className={`${
         'image' + identifier
-      } -translate-y-[50px] opacity-0 w-full pt-4 overflow-hidden px-4 max-h-screen`}
+      } -translate-y-[50px] opacity-0 w-full pt-4 overflow-hidden px-2 max-h-screen`}
     >
       <img
         className="object-cover rounded-t-[12px] shadow-lg min-h-[40vh] min-w-full"
@@ -40,7 +40,7 @@ const Products = ({ title, image, listArray, identifier, prodRef }) => (
     <div
       className={`${
         'list' + identifier
-      } translate-y-[50px] opacity-0 mx-4 shadow-lg [border-top:6px_solid_white] rounded-b-[12px] bg-sky-700 p-8`}
+      } translate-y-[50px] opacity-0 mx-2 shadow-lg [border-top:6px_solid_white] rounded-b-[12px] bg-sky-700 p-8`}
     >
       <ul className="w-full px-4 list-disc text-base font-[500] flex flex-col gap-4  text-white">
         {listArray.map((list, index) => {
@@ -244,7 +244,7 @@ const Pet = () => {
               alt="Hero"
             />
           </div>
-          <div className="px-4">
+          <div className="px-2">
             <p className="pet_definition font-[500] -translate-y-[80px] opacity-0 text-[rgb(0,0,0,0.6)] text-center font-Nunito text-base">
               <b>Pi-Vet</b> remote monitoring and decision intelligence tool is
               a combination of wearable devices, mobile application and data
@@ -255,7 +255,7 @@ const Pet = () => {
 
           <Spacing />
 
-          <section className="w-full px-4">
+          <section className="w-full px-2">
             <Products
               prodRef={prodRefOne}
               identifier="productOne"

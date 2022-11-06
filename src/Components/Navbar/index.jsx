@@ -53,7 +53,7 @@ const Navbar = () => {
                     isOpen
                       ? '[@media(max-width:_1020px)]:-translate-x-0 delay-1000'
                       : '[@media(max-width:_1020px)]:-translate-x-80'
-                  } transition-all duration-500 relative gap-2 items-center`}
+                  } transition-all duration-500 relative z-[1000] gap-2 items-center`}
                 >
                   <h4 className="text-white text-[14px] font-[600]">
                     {navItem.label}
