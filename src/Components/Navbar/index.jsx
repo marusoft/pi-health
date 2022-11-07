@@ -38,7 +38,7 @@ const Navbar = () => {
           } lg:z-[2000] z-[-1] transition-all duration-1000 pl-4 lg:h-max h-screen bgNavbar lg:relative w-full pt-[140px] lg:pt-0 px-4 gap-y-10 flex lg:justify-between lg:items-center  flex-1 lg:flex-row flex-col`}
         >
           <span
-            className={`h-[1px] w-32 lg:hidden ${
+            className={`h-[1px] w-32 lg:hidden  ${
               isOpen ? '-translate-x-0' : '-translate-x-40'
             }  bg-white transition-all delay-700 ease-in-out duration-1000`}
           />
@@ -46,29 +46,32 @@ const Navbar = () => {
             if (navItem.subList) {
               return (
                 <div
-                  onClick={(e) => toggleSubList(e, navItem.label)}
-                  role="button"
                   key={navItem.label}
                   className={`flex ${
                     isOpen
                       ? '[@media(max-width:_1020px)]:-translate-x-0 delay-1000'
                       : '[@media(max-width:_1020px)]:-translate-x-80'
-                  } transition-all duration-500 relative z-[1000] gap-2 items-center`}
+                  } transition-all duration-500 relative flex-col   gap-2 lg:items-center`}
                 >
-                  <h4 className="text-white text-[14px] font-[600]">
-                    {navItem.label}
-                  </h4>
-                  {navItem.icon}
+                  <div className="text-white flex items-center gap-2 w-max text-[14px] font-[600]">
+                    <button
+                      className="cursor-pointer"
+                      onClick={(e) => toggleSubList(e, navItem.label)}
+                    >
+                      {navItem.label}
+                    </button>
+                    {navItem.icon}
+                  </div>
                   <div
                     onMouseLeave={() => setShowList('')}
-                    className={`absolute ${
-                      showList === navItem.label ? 'flex' : 'hidden'
-                    }  w-max top-10 bg-white rounded-[3px] flex-col items-stretch`}
+                    className={`lg:absolute ${
+                      showList === navItem.label ? 'flex' : 'hidden invisible'
+                    } z-[1000] top-10 bg-white w-[160px] rounded-[3px] flex-col`}
                   >
                     {navItem.subList.map((list) => (
                       <Link
                         to={list.route}
-                        className="font-[600] text-[14px] px-6 py-2 hover:bg-blue hover:text-white "
+                        className="font-[600] text-[14px] border-b px-6 py-2 hover:bg-blue hover:text-white "
                         key={list.label}
                       >
                         {list.label}
@@ -81,7 +84,7 @@ const Navbar = () => {
               return (
                 <Link
                   to={navItem.route}
-                  className={`text-white ${
+                  className={`text-white w-max ${
                     isOpen
                       ? '[@media(max-width:_1020px)]:-translate-x-0 delay-1000'
                       : '[@media(max-width:_1020px)]:-translate-x-80'

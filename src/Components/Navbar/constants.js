@@ -20,11 +20,6 @@ const NAV_CONTENT = [
     route: routes.howItWorks,
   },
   {
-    label: 'Features',
-    route: routes.features,
-  },
-
-  {
     icon: <AiOutlineCaretDown className="text-white" />,
     label: 'Products',
     subList: [
@@ -32,6 +27,19 @@ const NAV_CONTENT = [
       { label: 'Pi-Pet', route: routes.pet },
       { label: 'Pi-Sport', route: routes.sports },
       { label: 'Pi-Kids', route: routes.kids },
+    ],
+  },
+  {
+    label: 'Features',
+    route: routes.features,
+  },
+  {
+    icon: <AiOutlineCaretDown className="text-white" />,
+    label: 'Programs',
+    subList: [
+      { label: 'Program-one', route: routes.elderly },
+      { label: 'Program-two', route: routes.pet },
+      { label: 'Program-three', route: routes.sports },
     ],
   },
   {

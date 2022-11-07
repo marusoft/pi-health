@@ -97,12 +97,13 @@ const Footer = () => {
                       onMouseLeave={() => setShowList('')}
                       className={`absolute ${
                         showList === navItem.label ? 'flex' : 'hidden'
-                      }  w-max left-[-50%] bottom-[-550%] lg:left-[25%] z-10 lg:bottom-0 bg-white  flex-col items-stretch`}
+                      }  w-[160px] left-[0%] h-max bottom-[-550%] z-[1000] top-8 bg-white  flex-col items-stretch`}
                     >
                       {navItem.subList.map((list) => (
                         <Link
                           to={list.route}
-                          className="font-[500] px-6 py-2  hover:bg-[rgba(53,_118,_167,_0.8)] hover:text-white text-[14px]"
+                          onClick={() => setShowList('')}
+                          className="font-[500] px-6 py-2 border-b hover:bg-[rgba(53,_118,_167,_0.8)] hover:text-white text-[14px]"
                           key={list.label}
                         >
                           {list.label}
@@ -125,7 +126,7 @@ const Footer = () => {
             })}
           </div>
           <div className="w-full h-[1px] [border:0.5px_solid_rgb(255,255,255,0.3)] my-10" />
-          <div className="socials translate-y-[20px] opacity-0 flex flex-col gap-6 flex-1">
+          <div className="socials z-[100] translate-y-[20px] opacity-0 flex flex-col gap-6 flex-1">
             <div className="text-white flex items-center gap-3 text-[20px]">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-transparent [border:.5px_solid_white]">
                 <AiOutlineTwitter className="w-[50%] h-[50%]" />
