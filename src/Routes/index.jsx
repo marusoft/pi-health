@@ -8,7 +8,7 @@ const Pet = lazy(() => import('../Pages/Pet'));
 const Elderly = lazy(() => import('../Pages/Elderly'));
 const Contact = lazy(() => import('../Pages/Contact'));
 const Features = lazy(() => import('../Pages/Features'));
-const PiHealthElderly = lazy(() => import('../Pages/PiHealthElderly'));
+const PiHealthElderly = lazy(() => import('../Pages/PiHealth'));
 const PiStakeholder = lazy(() => import('../Pages/PiStakeholder'));
 
 const App = () => {

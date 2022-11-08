@@ -23,8 +23,8 @@ const NAV_CONTENT = [
     icon: <AiOutlineCaretDown className="text-white" />,
     label: 'Products',
     subList: [
-      { label: 'Pi-Elderly', route: routes.elderly },
-      { label: 'Pi-Pet', route: routes.pet },
+      { label: 'Pi-Health', route: routes.elderly },
+      { label: 'Pi-Pets', route: routes.pet },
       // { label: 'Pi-Sport', route: routes.sports },
       // { label: 'Pi-Kids', route: routes.kids },
     ],

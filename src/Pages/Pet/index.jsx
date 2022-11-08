@@ -209,10 +209,11 @@ const Pet = () => {
           </div>
           <div className="px-2">
             <p className="pet_definition font-[500] mt-8 -translate-y-[80px] opacity-0 text-[rgb(0,0,0,0.6)] font-Nunito text-base">
-              <b>Pi-Pet</b> remote monitoring and decision intelligence tool is
-              a combination of wearable devices, mobile application and data
-              analytics technology deployed to provide personalized,
-              uninterrupted and value based care for dogs and horses.
+              <b>Pi-Pets</b> remote monitoring and decision intelligence tool is
+              a combination of wearable devices, mobile application and{' '}
+              <b>A.I </b>
+              enabled technology deployed to provide personalized, uninterrupted
+              and value based care for dogs and horses.
             </p>
           </div>
 
@@ -226,7 +227,7 @@ const Pet = () => {
               image={PiProductOne}
               listArray={[
                 'Monitoring of heart rate, respiration, faecal output',
-                'Telemetry (leg movement, distance covered, jumping)',
+                'Telemetry (movement, distance covered, jumping)',
                 'Sleep and stress tracking',
                 'Temp level monitoring',
                 ' Bluetooth, Wifi and 4G comms enabled',
@@ -239,7 +240,7 @@ const Pet = () => {
             <Products
               prodRef={prodRefTwo}
               identifier="productTwo"
-              title="Breeder/Pet Parent Interface"
+              title="Owner/Pet Parent Interface"
               image={PiProductTwo}
               listArray={[
                 'Real time health vitals monitoring',

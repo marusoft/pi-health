@@ -308,8 +308,8 @@ const Elderly = () => {
             </div>
             <div className="px-2">
               <p className="pet_definition translate-y-10 opacity-0 px-2 font-[500] mt-8 text-[rgb(0,0,0,0.6)] font-Nunito text-base">
-                <b>Pi-Health Elderly</b> is a remote health monitoring and
-                decision intelligence platform dedicated to deliver non-evasive,
+                <b>Pi-Health</b> is a remote health monitoring and decision
+                intelligence platform dedicated to deliver non-evasive,
                 continuous and inclusionary care using our smart care and
                 artificial intelligence technology”
               </p>
