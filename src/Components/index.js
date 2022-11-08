@@ -5,3 +5,5 @@ export { default as Footer } from './Footer';
 export { default as Navbar } from './Navbar';
 export { default as TitleWithBg } from './TitleWithBg';
 export { default as Layout } from './Layout';
+export { default as DecoratedHeader } from './DecoratedHeader';
+export { default as InfoGraphic } from './InfoGraphic';

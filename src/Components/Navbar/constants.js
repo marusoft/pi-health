@@ -25,8 +25,8 @@ const NAV_CONTENT = [
     subList: [
       { label: 'Pi-Elderly', route: routes.elderly },
       { label: 'Pi-Pet', route: routes.pet },
-      { label: 'Pi-Sport', route: routes.sports },
-      { label: 'Pi-Kids', route: routes.kids },
+      // { label: 'Pi-Sport', route: routes.sports },
+      // { label: 'Pi-Kids', route: routes.kids },
     ],
   },
   {
@@ -46,9 +46,8 @@ const NAV_CONTENT = [
     icon: <AiOutlineCaretDown className="text-white" />,
     label: 'Stakeholders',
     subList: [
-      { label: 'program-one', route: routes.programOne },
-      { label: 'program-two', route: routes.programTwo },
-      { label: 'program-three', route: routes.programThree },
+      { label: 'Pi-Health Elderly', route: routes.piHealthElderly },
+      { label: 'Pi-Pet Stakeholder', route: routes.stakeholder },
     ],
   },
   {

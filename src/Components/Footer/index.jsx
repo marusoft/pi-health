@@ -97,7 +97,7 @@ const Footer = () => {
                       onMouseLeave={() => setShowList('')}
                       className={`absolute ${
                         showList === navItem.label ? 'flex' : 'hidden'
-                      }  w-[160px] left-[0%] h-max bottom-[-550%] z-[1000] top-8 bg-white  flex-col items-stretch`}
+                      }  w-[190px] left-[0%] h-max bottom-[-550%] z-[1000] top-8 bg-white  flex-col items-stretch`}
                     >
                       {navItem.subList.map((list) => (
                         <Link

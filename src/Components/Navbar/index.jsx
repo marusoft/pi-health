@@ -66,7 +66,7 @@ const Navbar = () => {
                     onMouseLeave={() => setShowList('')}
                     className={`lg:absolute ${
                       showList === navItem.label ? 'flex' : 'hidden invisible'
-                    } z-[1000] top-10 bg-white w-[160px] rounded-[3px] flex-col`}
+                    } z-[1000] top-10 bg-white w-[190px] rounded-[3px] flex-col`}
                   >
                     {navItem.subList.map((list) => (
                       <Link
