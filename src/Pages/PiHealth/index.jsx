@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-// import gsap, { Elastic } from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import gsap, { Elastic } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import windowResizerListener from '../../Utils/helper';
 import { Layout, DecoratedHeader, InfoGraphic } from '../../Components';
@@ -60,8 +60,69 @@ const HEALTH_CONSTANTS = [
 
 const PiHealth = () => {
   const healthRef = useRef();
+  const healthConstantRef = useRef();
 
   const { windowWidth } = windowResizerListener();
+
+  useEffect(() => {
+    if (windowWidth < 769) {
+      let ctx = gsap.context(
+        () => {
+          gsap.to('.health_hero', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+          });
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  gsap.to(`.${entry.target.classList[0]} .tag`, {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: Elastic.easeOut.config(1, 0.3),
+                  });
+
+                  gsap.to(`.${entry.target.classList[0]} .title_info`, {
+                    x: 0,
+                    opacity: 1,
+                    duration: 2.5,
+                    delay: 0.5,
+                    ease: Elastic.easeOut.config(1, 0.3),
+                  });
+                  gsap.to(`.${entry.target.classList[0]} .health_image`, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 2.5,
+                    ease: Elastic.easeOut.config(1, 0.3),
+                  });
+                  gsap.to(`.${entry.target.classList[0]} .list_info`, {
+                    x: 0,
+                    opacity: 1,
+                    duration: 2.5,
+                    ease: Elastic.easeOut.config(1, 0.3),
+                  });
+                } else return;
+              });
+            },
+            {
+              threshold: 0.3,
+            }
+          );
+
+          Array.from(healthConstantRef.current.children).forEach((child) =>
+            observer.observe(child)
+          );
+        },
+        healthRef,
+        healthConstantRef
+      );
+      return () => ctx.revert();
+    }
+  }, []);
 
   return (
     <Layout>
@@ -74,7 +135,7 @@ const PiHealth = () => {
       ) : (
         <main ref={healthRef}>
           <section>
-            <div className="w-full overflow-hidden max-h-screen">
+            <div className="health_hero -translate-y-20 opacity-0 w-full overflow-hidden max-h-screen">
               <img
                 src={PiHealthImageHero}
                 className="hero_image object-cover min-h-[40vh] min-w-full"
@@ -92,11 +153,16 @@ const PiHealth = () => {
           <Spacing />
 
           <section className="px-2">
-            <div className="w-full px-2 flex flex-col gap-12">
+            <div
+              ref={healthConstantRef}
+              className="w-full px-2 flex flex-col gap-12"
+            >
               {HEALTH_CONSTANTS.map((product, index) => {
                 return (
                   <InfoGraphic
+                    identifier={'healthRef' + index}
                     key={product.title + index}
+                    index={index}
                     tagNumber={product.tagNumber}
                     imageSrc={product.imageSrc}
                     title={product.title}
